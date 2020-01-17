@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
+    console.log('-----------------');
+    console.log(req.query.token);
+    console.log(req.headers['x-forwarded-for'] || req.connection.remoteAddress);
+    console.log('-----------------\n');
     res.send('<h1>ave breadoggos</h1>');
 });
 
